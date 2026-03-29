@@ -19,7 +19,8 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "frontend" {
-  bucket_prefix = "jenkins-bucket-michael-dale"
+  #bucket_prefix = "jenkins-bucket-michael-dale"
+  bucket = "jenkins-bucket-michael-dale"
   force_destroy = true
 
 
