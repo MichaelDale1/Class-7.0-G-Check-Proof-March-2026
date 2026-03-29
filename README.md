@@ -1,4 +1,5 @@
 
+
 # New Jenkins server test with terraform deployment and triggers
 
 ## Jenkinsfile
@@ -66,3 +67,10 @@ https://github.com/user-attachments/assets/c53617f7-287b-445f-9594-f56a810b625a
 ## S3 Bucket contains Theo WAF's response Armageddon Submission
 
 ![Theo WAF Response to Armageddon 7.0 Submission](https://github.com/MichaelDale1/new-jenkins-s3-test/blob/main/Theo-Waf-Response-to-Arm-7-0/Theo-Waf-response-to-group-Armageddon-7.0-submission.png)
+
+ 
+### Group Repo Submission 
+|  Repo Name | Link |
+|-----------------|------|
+| armageddon-C7-BHOEjM-Wolfpack | [View](https://github.com/jastek69/armageddon-C7-BHOEjM-Wolfpack) |
+| Class-7-Armageddon-2026-Dale | [View](https://github.com/MichaelDale1/Class-7-Armageddon-2026-Dale) |
