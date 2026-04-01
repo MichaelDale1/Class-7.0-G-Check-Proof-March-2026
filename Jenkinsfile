@@ -14,7 +14,6 @@ pipeline {
             }
         }
 
-        
         stage('Snyk IaC Scan Monitor') {
             steps {
                 snykSecurity(
