@@ -17,11 +17,11 @@ pipeline {
         stage('Snyk IaC Scan Test') {
             steps {
                 withCredentials([string(credentialsId: 'snyk-api-token-string', variable: 'SNYK_TOKEN')]) {
-                    sh '''
-                        export PATH=$PATH:/var/lib/jenkins/tools/io.snyk.jenkins.tools.SnykInstallation/snyk
-                        snyk-linux auth $SNYK_TOKEN
-                        snyk-linux iac test --org=$SNYK_ORG --severity-threshold=high || true
-                    '''
+                    script {
+                        def snykHome = tool 'snyk-linux'
+                        sh "${snykHome}/snyk auth ${SNYK_TOKEN}"
+                        sh "${snykHome}/snyk iac test --org=${SNYK_ORG} --severity-threshold=high || true"
+                    }
                 }
             }
         }           
@@ -29,7 +29,7 @@ pipeline {
         stage('Snyk IaC Scan Monitor') {
             steps {
                 snykSecurity(
-                    snykInstallation: 'snyk',
+                    snykInstallation: 'snyk-linux',
                     snykTokenId: 'snyk-api-token',
                     additionalArguments: '--iac --report --org=$SNYK_ORG --severity-threshold=high',
                     failOnIssues: true,
